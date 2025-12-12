@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haosheng Wang</title>
+  <meta name="description" content="Haosheng Wang — Personal website." />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --card: #fafafa;
+      --accent: #2563eb;
+      --accent2:#0ea5e9;
+      --shadow: 0 8px 30px rgba(17,24,39,.08);
+      --radius: 14px;
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .layout{
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      position: sticky;
+      top: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(37,99,235,.10), rgba(14,165,233,.10));
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .avatar span{
+      color: var(--muted);
+      font-size: 14px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .name{
+      margin: 14px 0 4px;
+      font-size: 22px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .meta{
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .meta span{ color: var(--muted); }
+
+    .links{
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      font-size: 14px;
+    }
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 1px 0 rgba(17,24,39,.04);
+    }
+    .pill:hover{
+      border-color: rgba(37,99,235,.35);
+      text-decoration: none;
+    }
+
+    nav{
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+    }
+    nav a{
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--text);
+    }
+    nav a.active, nav a:hover{
+      background: rgba(37,99,235,.08);
+      text-decoration: none;
+    }
+
+    /* Main content */
+    main{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding: 6px 4px 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+    .hero h1{
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .hero p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    section{ padding: 10px 4px 2px; }
+    section + section{ margin-top: 16px; }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .subtle{
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: var(--card);
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .card p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .card .row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .item{
+      display: grid;
+      gap: 2px;
+      padding: 10px 0;
+      border-top: 1px dashed var(--border);
+    }
+    .item:first-of-type{ border-top: none; padding-top: 0; }
+    .item .title{ font-weight: 650; }
+    .item .desc{ color: var(--muted); font-size: 14px; }
+
+    footer{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .layout{ grid-template-columns: 1fr; }
+      .sidebar{ position: relative; top: 0; }
+      .cards{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="avatar" aria-label="Profile photo placeholder">
+          <!-- Replace the span with an <img> once you have a photo:
+               <img src="assets/profile.jpg" alt="Haosheng Wang" style="width:100%;height:100%;object-fit:cover;">
+          -->
+          <span>Profile photo placeholder<br>(add later)</span>
+        </div>
+
+        <div class="name">Haosheng Wang</div>
+        <div class="tagline">
+          M.S. student @ Brown University (AI/ML) · Interested in LLMs, RL, and Knowledge Systems
+        </div>
+
+        <div class="meta">
+          <div><span>Location:</span> Providence, RI</div>
+          <div><span>Email:</span> <a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a></div>
+          <div><span>CV:</span> <a href="#" target="_blank" rel="noopener">PDF (placeholder)</a></div>
+        </div>
+
+        <div class="links">
+          <a class="pill" href="#" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="pill" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a class="pill" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="pill" href="#" target="_blank" rel="noopener">X</a>
+        </div>
+
+        <nav aria-label="Section navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </aside>
+
+      <!-- Main -->
+      <main>
+        <header class="hero">
+          <h1>Hi, I'm Haosheng.</h1>
+          <p>note: this is still under development. Thank you!</p>
+          <p>
+            I work on building practical, reliable AI systems—especially around large language models,
+            reinforcement learning, and structured knowledge (KG/ontologies). This site is under active
+            development.
+          </p>
+        </header>
+
+        <section id="about">
+          <h2>About</h2>
+          <p class="subtle">
+            Replace this paragraph with your preferred narrative: what you do, what you care about, and what you’re seeking.
+          </p>
+          <div class="item">
+            <div class="title">Current focus</div>
+            <div class="desc">Example: LLM alignment + tool use; efficient knowledge injection; trustworthy retrieval & reasoning.</div>
+          </div>
+          <div class="item">
+            <div class="title">Previously</div>
+            <div class="desc">Example: knowledge graph & ontology workflows; multi-agent pipelines; applied ML engineering.</div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <p class="subtle">Add/replace cards as you like. Each card supports links (demo, paper, code).</p>
+
+          <div class="cards">
+            <article class="card">
+              <h3>Project Title 1 (Placeholder)</h3>
+              <p>
+                1–2 sentences about the problem, your approach, and what you built.
+              </p>
+              <div class="row">
+                <a href="#" target="_blank" rel="noopener">Code</a>
+                <a href="#" target="_blank" rel="noopener">Demo</a>
+                <a href="#" target="_blank" rel="noopener">Write-up</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Project Title 2 (Placeholder)</h3>
+              <p>
+                Example: “Interactive storytelling system for lateral-thinking puzzles with multi-agent refinement.”
+              </p>
+              <div class="row">
+                <a href="#" target="_blank" rel="noopener">Code</a>
+                <a href="#" target="_blank" rel="noopener">Slides</a>
+                <a href="#" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Project Title 3 (Placeholder)</h3>
+              <p>
+                Example: “New knowledge token” prototype exploring embedding-level knowledge injection.
+              </p>
+              <div class="row">
+                <a href="#" target="_blank" rel="noopener">Code</a>
+                <a href="#" target="_blank" rel="noopener">Blog</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Project Title 4 (Placeholder)</h3>
+              <p>
+                Example: “GraphRAG / LightRAG experiments for scalable, grounded expert QA.”
+              </p>
+              <div class="row">
+                <a href="#" target="_blank" rel="noopener">Notes</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2>Publications</h2>
+          <p class="subtle">If you don’t have publications yet, list preprints, workshop papers, or “Selected writing.”</p>
+
+          <div class="item">
+            <div class="title">Paper Title (Year) — Venue</div>
+            <div class="desc">
+              Authors… · <a href="#" target="_blank" rel="noopener">PDF</a> · <a href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title">Another Paper Title (Year) — Venue</div>
+            <div class="desc">
+              Authors… · <a href="#" target="_blank" rel="noopener">PDF</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+
+          <div class="item">
+            <div class="title">Brown University — M.S., Computer Science</div>
+            <div class="desc">Providence, RI · (Add dates) · Focus: AI/ML</div>
+          </div>
+
+          <div class="item">
+            <div class="title">Previous Degree — (Your program)</div>
+            <div class="desc">Location · (Add dates) · Notes (optional)</div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p class="subtle">
+            Best way to reach me: <a href="mailto:YOUR_EMAIL@domain.com">YOUR_EMAIL@domain.com</a>.
+            You can also find me on <a href="#" target="_blank" rel="noopener">LinkedIn</a>.
+          </p>
+        </section>
+
+        <footer>
+          <div>© <span id="year"></span> Haosheng Wang</div>
+          <div>Built with plain HTML/CSS · Hosted on GitHub Pages</div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Active nav highlight
+    const links = Array.from(document.querySelectorAll("nav a"));
+    const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+      });
+    }, { rootMargin: "-30% 0px -60% 0px", threshold: 0.01 });
+
+    sections.forEach(s => obs.observe(s));
+  </script>
+</body>
+</html>
