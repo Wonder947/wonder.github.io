@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haosheng Wang</title>
+  <meta name="description" content="Haosheng Wang — Personal website." />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555;
+      --link: #1a56db;
+      --border: #e6e6e6;
+      --maxw: 920px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 26px 18px 60px;
+    }
+
+    /* Top nav (simple, minimal) */
+    .topnav{
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+    .topnav .brand{
+      font-weight: 700;
+      margin-right: 10px;
+      color: var(--text);
+    }
+    .topnav a{
+      color: var(--text);
+      padding: 2px 0;
+    }
+    .topnav a:hover{
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    /* Header with photo + name */
+    .header{
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin: 18px 0 10px;
+    }
+    .photo{
+      width: 170px;
+      height: 170px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #f7f7f7;
+      display: grid;
+      place-items: center;
+    }
+    .photo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo .placeholder{
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    h1{
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    /* Sections */
+    section{ margin-top: 18px; }
+    h2{
+      font-size: 22px;
+      margin: 22px 0 8px;
+      padding-top: 10px;
+    }
+    .rule{
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+      padding-top: 6px;
+    }
+
+    /* Education list styling */
+    .edu-list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .edu-item{
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .edu-logo{
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #fafafa;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .edu-logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .edu-logo .placeholder{
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      padding: 6px;
+    }
+    .edu-degree{
+      font-weight: 700;
+      margin: 0;
+    }
+    .edu-school{
+      margin: 0;
+    }
+    .edu-meta{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Contact row */
+    .contact{
+      margin-top: 8px;
+      color: var(--text);
+    }
+    .contact .muted{
+      color: var(--muted);
+    }
+    .contact ul{
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    footer{
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px){
+      .header{
+        grid-template-columns: 1fr;
+      }
+      .photo{
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Top navigation -->
+    <nav class="topnav" aria-label="Primary">
+      <span class="brand">Haosheng Wang</span>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <!-- Optional: link to a PDF CV if you host it -->
+      <!-- <a href="assets/Haosheng_Wang_CV.pdf" target="_blank" rel="noopener">CV</a> -->
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="photo" aria-label="Profile photo">
+        <!-- Replace with your real image when ready -->
+        <!-- <img src="assets/profile.jpg" alt="Haosheng Wang" /> -->
+        <div class="placeholder">Profile photo<br/>placeholder</div>
+      </div>
+
+      <div>
+        <h1>Haosheng Wang</h1>
+        <p class="subtitle">
+          M.S. student in Computer Science (AI) at Brown University. Interested in large language models,
+          reinforcement learning, and structured knowledge systems (knowledge graphs and ontologies), with a
+          focus on building reliable and generalizable AI.
+        </p>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="rule">
+      <h2>About Me</h2>
+      <p>
+        I am broadly interested in building intelligent systems that can generalize, adapt, and reason in efficient,
+        robust, and interpretable ways. My recent work includes developing an ontology-aligned knowledge-graph RAG
+        pipeline for grounded retrieval and multi-hop reasoning, and exploring token/embedding-level mechanisms for
+        efficient adaptation and structured memory in language models.
+      </p>
+      <p>
+        If you would like to connect, please feel free to reach out by email.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="rule">
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <div class="edu-logo" aria-label="Brown University logo placeholder">
+            <!-- Optional: add a logo image file -->
+            <!-- <img src="assets/brown.png" alt="Brown University" /> -->
+            <div class="placeholder">Brown</div>
+          </div>
+          <div>
+            <p class="edu-degree">M.S. in Computer Science (AI Track)</p>
+            <p class="edu-school">Brown University</p>
+            <p class="edu-meta">Providence, RI · Sep 2024 – May 2026 (expected)</p>
+          </div>
+        </li>
+
+        <li class="edu-item">
+          <div class="edu-logo" aria-label="NYU logo placeholder">
+            <!-- <img src="assets/nyu.png" alt="New York University" /> -->
+            <div class="placeholder">NYU</div>
+          </div>
+          <div>
+            <p class="edu-degree">B.A. in Computer Science &amp; Mathematics</p>
+            <p class="edu-school">New York University</p>
+            <p class="edu-meta">New York, NY · Jan 2021 – May 2024</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="rule">
+      <h2>Contact</h2>
+      <div class="contact">
+        <p class="muted">Best way to reach me:</p>
+        <ul>
+          <li>Email: <a href="mailto:hswang947@gmail.com">hswang947@gmail.com</a></li>
+          <!-- Optional: only include if you want them live now -->
+          <li>Website: <a href="https://wonder947.com" target="_blank" rel="noopener">wonder947.com</a></li>
+          <!-- <li>GitHub: <a href="https://github.com/Wonder947" target="_blank" rel="noopener">github.com/Wonder947</a></li> -->
+          <!-- <li>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener">LinkedIn</a></li> -->
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Haosheng Wang</div>
+      <div>Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

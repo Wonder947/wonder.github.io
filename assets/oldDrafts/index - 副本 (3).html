@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haosheng Wang</title>
+  <meta name="description" content="Haosheng Wang — Personal website." />
+
+  <style>
+    :root{
+      --maxw: 860px;
+      --text: #111;
+      --muted: #444;
+      --link: #1a56db;
+      --border: #e6e6e6;
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.65;
+      font-size: 16px;
+      background: #fff;
+    }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 22px 18px 60px;
+    }
+
+    /* Top nav — simple inline list like the reference site */
+    .topnav{
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+    .topnav li{ margin: 0; padding: 0; }
+    .topnav a{ color: var(--text); }
+    .topnav a:hover{ color: var(--link); text-decoration: none; }
+
+    /* Header */
+    .header{
+      margin-top: 8px;
+    }
+
+    .profile{
+      width: 170px;
+      height: 170px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f7f7f7;
+      display: grid;
+      place-items: center;
+    }
+    .profile img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile .placeholder{
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h2.name{
+      margin: 16px 0 4px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* Decorative separator line (the reference shows a repeated motif) */
+    .separator{
+      margin: 6px 0 18px;
+      color: #777;
+      letter-spacing: 4px;
+      user-select: none;
+    }
+
+    /* Section headings resemble large H1 headings */
+    h1.section-title{
+      font-size: 26px;
+      margin: 22px 0 10px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    p{ margin: 0 0 10px; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    /* Education blocks: image + stacked text */
+    .edu{
+      display: grid;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .edu-item{
+      display: grid;
+      gap: 8px;
+    }
+    .edu-logo{
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fafafa;
+      display: grid;
+      place-items: center;
+    }
+    .edu-logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .edu-logo .placeholder{
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      padding: 6px;
+    }
+
+    .edu-degree{
+      font-weight: 700;
+      margin: 0;
+    }
+    .edu-school{
+      margin: 0;
+    }
+    .edu-years{
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Contact list */
+    .contact-list{
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    /* Small footer feel */
+    footer{
+      margin-top: 34px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 520px){
+      .profile{ width: 150px; height: 150px; }
+      h2.name{ font-size: 26px; }
+      h1.section-title{ font-size: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Nav (mirrors the reference site's top nav style) -->
+    <ul class="topnav" aria-label="Primary navigation">
+      <li><a href="#home">Home</a></li>
+      <!-- Reference site has Publications + CV; you asked to omit publications for now. -->
+      <!-- You can add CV later when you have a PDF hosted. -->
+      <!-- <li><a href="assets/Haosheng_Wang_CV.pdf" target="_blank" rel="noopener">CV</a></li> -->
+    </ul>
+
+    <div id="home" class="header">
+      <div class="profile" aria-label="Profile photo">
+        <!-- Replace with your real photo when ready -->
+        <!-- <img src="assets/profile.jpg" alt="Haosheng Wang" /> -->
+        <div class="placeholder">Profile photo placeholder</div>
+      </div>
+
+      <h2 class="name">Haosheng Wang</h2>
+      <div class="separator">* * * * *</div>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+      <h1 class="section-title">About Me</h1>
+
+      <p>
+        Hi, I'm Haosheng! I'm an M.S. student in Computer Science (AI) at Brown University.
+      </p>
+
+      <p>
+        I am broadly interested in building intelligent systems that can generalize, adapt, and reason in efficient,
+        robust, and interpretable ways. My recent work includes ontology-aligned knowledge-graph RAG for grounded
+        retrieval and multi-hop reasoning, and exploring token/embedding-level mechanisms for efficient adaptation and
+        structured memory in language models.
+      </p>
+
+      <p class="muted">
+        If you have any questions about my work or research/academia/programming-related topics, please feel free to reach out!
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h1 class="section-title">Education</h1>
+
+      <div class="edu">
+        <div class="edu-item">
+          <div class="edu-logo" aria-label="Brown University logo">
+            <!-- Optional: add a logo image file -->
+            <!-- <img src="assets/brown.png" alt="Brown University" /> -->
+            <div class="placeholder">Brown</div>
+          </div>
+
+          <p class="edu-degree">M.S. in Computer Science (AI Track)</p>
+          <p class="edu-school">Brown University</p>
+          <p class="edu-years">2024–2026 (expected)</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-logo" aria-label="New York University logo">
+            <!-- <img src="assets/nyu.png" alt="New York University" /> -->
+            <div class="placeholder">NYU</div>
+          </div>
+
+          <p class="edu-degree">B.A. in Computer Science &amp; Mathematics</p>
+          <p class="edu-school">New York University</p>
+          <p class="edu-years">2021–2024</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h1 class="section-title">Contact</h1>
+
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:hswang947@gmail.com">hswang947@gmail.com</a></li>
+        <li>Website: <a href="https://wonder947.com" target="_blank" rel="noopener">wonder947.com</a></li>
+        <!-- Add only if you want them visible now -->
+        <!-- <li>GitHub: <a href="https://github.com/Wonder947" target="_blank" rel="noopener">github.com/Wonder947</a></li> -->
+        <!-- <li>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener">LinkedIn</a></li> -->
+      </ul>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Haosheng Wang</div>
+      <div>Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
