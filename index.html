@@ -244,6 +244,26 @@
       .sidebar{ position: relative; top: 0; }
       .cards{ grid-template-columns: 1fr; }
     }
+
+    /* Keyword chips for Research Interests */
+    .keywords {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 8px;
+    }
+
+    .kw {
+      font-size: 13px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08); /* matches your accent */
+      color: #1e3a8a;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
   </style>
 </head>
 
@@ -287,18 +307,26 @@
           <h1>About</h1>
 
           <p>
-            Hello, I'm Haosheng Wang, a Master student major in Computer Science at Brown University. I graduated from New York University with a joint major of Math and CS.
-            I am broadly interested in artificial intelligence, with a long-term goal of developing intelligent systems that can reason, learn, and act in
-            grounded and generalizable ways.
+            Hello, I'm Haosheng Wang, a Master's student in Computer Science at Brown University. I previously earned a joint degree in Mathematics and Computer Science from New York University. I am broadly interested in artificial intelligence, with a long-term goal of developing intelligent systems that can reason, learn, and act in grounded and generalizable ways—and ultimately contribute to expanding human knowledge.
+            <br></br>
+            I am particularly drawn to questions of abstraction, memory, and adaptation: how intelligent systems can operate efficiently in high-dimensional environments, accumulate and reuse knowledge over time, and balance neural representations with symbolic structure. I view AI not only as a powerful engineering discipline, but also as a lens for understanding the principles underlying human intelligence itself.
           </p>
+        </section>
+      
+        <section id="research">
+          <h1>Research Interests</h1>
 
-          <h2>Research Interests</h2>
           <div class="item">
             <div class="title">Long-term memory and efficient adaptation</div>
             <div class="desc">
               How can intelligent systems build and use long-term memory—internally or via external structured representations—to
               support robust generalization and domain adaptation?
-              <br><span class="subtle">Keywords: LLM adaptation, generalization, continual learning, neural-symbolic memory</span>
+              <div class="keywords">
+                <span class="kw">LLM adaptation</span>
+                <span class="kw">generalization</span>
+                <span class="kw">continual learning</span>
+                <span class="kw">neural–symbolic memory</span>
+              </div>
             </div>
           </div>
 
@@ -307,7 +335,12 @@
             <div class="desc">
               Humans learn without explicit labels or reward functions. How can AI agents develop self-evaluation signals and
               shape their own objectives to improve over time?
-              <br><span class="subtle">Keywords: self-supervised learning, preference learning, self-improvement, goal/utility design</span>
+              <div class="keywords">
+                <span class="kw">self-supervised learning</span>
+                <span class="kw">preference learning</span>
+                <span class="kw">self-improvement</span>
+                <span class="kw">goal / utility design</span>
+              </div>
             </div>
           </div>
 
@@ -316,10 +349,16 @@
             <div class="desc">
               What are the tradeoffs between discrete symbols and continuous embeddings for efficiency, interpretability, and
               scalability—and how can hierarchical abstraction bridge them?
-              <br><span class="subtle">Keywords: neuro-symbolic systems, abstraction, hierarchical RL, representation learning</span>
+              <div class="keywords">
+                <span class="kw">neural–symbolic systems</span>
+                <span class="kw">abstraction</span>
+                <span class="kw">hierarchical RL</span>
+                <span class="kw">representation learning</span>
+              </div>
             </div>
           </div>
         </section>
+
 
         <section id="education">
           <h1>Education</h1>
